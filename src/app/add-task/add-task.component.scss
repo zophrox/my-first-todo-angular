@@ -1,0 +1,59 @@
+.addTask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input {
+  border: 1px solid #cccccc; //цвет рамки
+  border-radius: 3px; //закругление углов (общее)
+  -webkit-border-radius: 3px; //закругление углов (Google Chrome)
+  -moz-border-radius: 3px; //закругление углов (FireFox)
+  -khtml-border-radius: 3px; //закругление углов (Safari)
+  background: #ffffff !important; // желательно прописывать, так как в Chrome при сохранных данных оно может быть желтым
+  outline: none; // удаляет обводку в браузерах хром(желтая) и сафари(синяя)
+  height: 24px; // высота на свое усмотрение
+  // widows: 120px;; // ширина на свое усмотрение
+  // width: 10%;
+  color: #cccccc; //цвет шрифта в обычном состоянии
+  font-size: 16px; // Размер шрифта
+  font-family: Tahoma; // Стиль шрифта
+}
+input[type="text"]:focus {
+  color: #000000;
+  border: 1px solid #000000;
+}
+.textTask {
+  width: 40%;
+}
+p {
+  margin-left: 30px;
+}
+label {
+  margin-right: 20px;
+  font-size: 26px;
+  color: green;
+}
+.addButton{
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 40px;
+}
+button {
+  text-decoration: none;
+  outline: none;
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px 40px green inset, 0 0 0 0 green;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: white;
+  transition: 0.15s ease-in-out;
+  
+}
+button:hover {
+  box-shadow: 0 0 10px 0 green inset, 0 0 10px 4px green;
+  color: green;
+}

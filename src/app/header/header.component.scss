@@ -1,0 +1,45 @@
+a {
+  color: #fff;
+  text-decoration: none;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: black;
+  color: #fff;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+.header-section {
+  display: flex;
+  align-items: center;
+}
+.header-item {
+  padding: 10px 15px;
+  font-size: 20px;
+  margin-left: 5px;
+  box-sizing: padding-box;
+}
+.header-item:hover {
+  background-color: #f1b637;
+  border-radius: 6px;
+  box-sizing: padding-box;
+
+ 
+}
+.header-logo {
+  font-size: 60px;
+  background-color: green;
+  border-radius: 6rem;
+}
+.active {
+  background-color: #f1b637;
+  padding: 10px 15px;
+  margin-left: 5px;
+  border-radius: 6px;
+}

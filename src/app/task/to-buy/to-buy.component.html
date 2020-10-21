@@ -1,0 +1,8 @@
+<app-task-item
+  *ngFor="let data of buyTask; let i = index"
+  [taskData]="data"
+  [id]="i"
+></app-task-item>
+<br />
+<br />
+<app-add-task></app-add-task>

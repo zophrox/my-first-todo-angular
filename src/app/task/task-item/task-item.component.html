@@ -1,0 +1,20 @@
+<div class="task-input">
+  <div class="text">
+    <p [ngClass]="{ through: lineThrough }">
+      <input type="checkbox" id="qwe" (change)="checkValue($event)" />
+      {{ taskData.text }}
+    </p>
+
+    <div class="time">
+      <p *ngIf="!lineThrough">Виконати до: {{ taskData.time }}</p>
+      <p class="time-ready" *ngIf="lineThrough">
+        Виконано в: {{ taskData.readyTime | date: "hh:mm:ss" }}
+      </p>
+    </div>
+  </div>
+
+  <div class="edit">
+    <button>Редагувати</button>
+    <button (click)="removeTask()">Видалити</button>
+  </div>
+</div>

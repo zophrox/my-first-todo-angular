@@ -1,0 +1,14 @@
+<div class="addTask">
+  <label for="inputTask">Нове завдання</label>
+  <input
+    type="text"
+    placeholder="Текст завдання"
+    id="inputTask"
+    class="textTask"
+    [(ngModel)]="descriptionTask"
+  />
+  <p>Виконати до:<input type="time" [(ngModel)]="descriptionTaskTime" /></p>
+</div>
+
+<div class="addButton"><button (click)="addNewTask(descriptionTask,descriptionTaskTime)">Додати</button></div>
+
