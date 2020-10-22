@@ -1,45 +1,75 @@
-a {
-  color: #fff;
-  text-decoration: none;
-}
 .header {
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
   padding: 10px;
   background: black;
+  border-radius: 0.5rem;
   color: #fff;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
-
-nav {
-  display: flex;
-  align-items: center;
-}
-.header-section {
-  display: flex;
-  align-items: center;
-}
-.header-item {
+a {
+  color: white;
+  text-decoration: none;
   padding: 10px 15px;
   font-size: 20px;
   margin-left: 5px;
-  box-sizing: padding-box;
 }
-.header-item:hover {
+
+.header-logo {
+  display: flex;
+  justify-content: flex-start;
+
+  a {
+    font-size: 40px;
+  }
+
+  background-color: green;
+  border-radius: 0.5rem;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting {
+  a {
+    color: white;
+  }
+  display: flex;
+  justify-content: flex-end;
+  background-color: green;
+  border-radius: 0.5rem;
+}
+.highlight:hover {
   background-color: #f1b637;
   border-radius: 6px;
   box-sizing: padding-box;
-
- 
-}
-.header-logo {
-  font-size: 60px;
-  background-color: green;
-  border-radius: 6rem;
 }
 .active {
   background-color: #f1b637;
   padding: 10px 15px;
   margin-left: 5px;
   border-radius: 6px;
+}
+
+@media screen and(max-width:642px) {
+  .nav {
+    flex-direction: column;
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 20px;
+    }
+  }
+  // .header-logo a.icon {
+  //   background-image: url("https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff");
+  //   background-repeat: no-repeat;
+  //   height: 50px;
+  //   width: 50px;
+  //   background-size: 50px;
+  //   margin-top: 20px;
+  // }
 }

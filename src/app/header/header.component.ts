@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+display:string = 'none';
+changeDisplay(){
+ return this.display = "block"
+}
   constructor() { }
 
   ngOnInit() {

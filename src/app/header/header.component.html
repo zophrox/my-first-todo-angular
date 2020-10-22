@@ -1,32 +1,35 @@
 <div class="header">
-  <div class="header-section">
-    <div class="header-item header-logo">
-      <a routerLink="">MY First TODO</a>
-    </div>
-    <nav>
-      <div class="header-item header-button">
-        <a routerLink="/tobuy" routerLinkActive="active" fragment="buy"
-          >Купити</a
-        >
-      </div>
-      <div class="header-item header-button">
-        <a routerLink="/to-do" routerLinkActive="active" fragment="do"
-          >Зробити</a
-        >
-      </div>
-      <div class="header-item header-button">
-        <a routerLink="/to-call" routerLinkActive="active">Зателефонувати</a>
-      </div>
-      <div class="header-item header-button">
-        <a routerLink="/costs" routerLinkActive="active">Витрати</a>
-      </div>
-      <div class="header-item header-button">
-        <a routerLink="/sport">Спорт</a>
-      </div>
-    </nav>
-    <div class="header-section footer">
-      <div class="header-item header-button"><a href="">Налаштування</a></div>
-      <div class="header-item header-button"><a href="">Вхід</a></div>
-    </div>
+  <div class="header-logo">
+    <a class="icon"> </a>
+    <a routerLink="/start">MY First TODO</a>
+  </div>
+  <div class="nav">
+    <a
+      class="highlight"
+      routerLink="/tobuy"
+      routerLinkActive="active"
+      fragment="buy"
+      >Купити</a
+    >
+    <a
+      class="highlight"
+      routerLink="/to-do"
+      routerLinkActive="active"
+      fragment="do"
+      >Зробити</a
+    >
+    <a class="highlight" routerLink="/to-call" routerLinkActive="active"
+      >Зателефонувати</a
+    >
+    <a class="highlight" routerLink="/costs" routerLinkActive="active"
+      >Витрати</a
+    >
+    <a class="highlight" routerLink="/sport" routerLinkActive="active">Спорт</a>
+  </div>
+  <div class="setting">
+    <a class="highlight" routerLink="setting" routerLinkActive="active"
+      >Налаштування</a
+    >
+    <a class="highlight" routerLink="exit" routerLinkActive="active">Вхід</a>
   </div>
 </div>

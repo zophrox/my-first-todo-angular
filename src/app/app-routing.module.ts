@@ -6,16 +6,19 @@ import { ToCallComponent } from "./task/to-call/to-call.component";
 import { CostsComponent } from "./task/costs/costs.component";
 import { SportComponent } from "./sport/sport.component";
 
-import { ToBuyComponent } from './task/to-buy/to-buy.component';
-import { StartComponent } from './start/start.component';
+import { ToBuyComponent } from "./task/to-buy/to-buy.component";
+import { StartComponent } from "./start/start.component";
 const appRoutes: Routes = [
-  { path: "", component: StartComponent },
+  { path: "start", component: StartComponent },
   { path: "tobuy", component: ToBuyComponent },
   { path: "to-do", component: ToDoComponent },
-  
+
   { path: "to-call", component: ToCallComponent },
   { path: "costs", component: CostsComponent },
   { path: "sport", component: SportComponent },
+  { path: "setting", redirectTo: "/start" },
+  { path: "exit", redirectTo: "/start" },
+  { path: "**", redirectTo: "/start" },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
