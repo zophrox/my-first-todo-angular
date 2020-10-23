@@ -1,16 +1,16 @@
 .header {
   width: 100%;
   padding: 10px;
-  background: black;
+  background: #f0a500;
   border-radius: 0.5rem;
-  color: #fff;
+  color: #f4f4f4;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   display: block;
   position: relative;
   overflow: hidden;
 }
 a {
-  color: white;
+  color: #f4f4f4;
   text-decoration: none;
   padding: 10px 15px;
   font-size: 20px;
@@ -25,13 +25,18 @@ a {
     font-size: 40px;
   }
 
-  background-color: green;
+  background-color: #f0a500;
   border-radius: 0.5rem;
   align-items: center;
 }
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  background-color: #f4f4f4;
+  border-radius: 0.5rem;
+  .highlight {
+    color: #f0a500;
+  }
 }
 
 .setting {
@@ -40,16 +45,19 @@ a {
   }
   display: flex;
   justify-content: flex-end;
-  background-color: green;
+  background-color: #f0a500;
   border-radius: 0.5rem;
 }
 .highlight:hover {
-  background-color: #f1b637;
+  color: #f4f4f4;
+  background-color: #1a1c20;
   border-radius: 6px;
   box-sizing: padding-box;
 }
+
 .active {
-  background-color: #f1b637;
+  background-color: #1a1c20;
+
   padding: 10px 15px;
   margin-left: 5px;
   border-radius: 6px;
@@ -57,19 +65,29 @@ a {
 
 @media screen and(max-width:642px) {
   .nav {
-    flex-direction: column;
-    a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-    }
+    display: none;
   }
-  // .header-logo a.icon {
-  //   background-image: url("https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff");
-  //   background-repeat: no-repeat;
-  //   height: 50px;
-  //   width: 50px;
-  //   background-size: 50px;
-  //   margin-top: 20px;
-  // }
+  .navActivate {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .setting {
+    a {
+      color: #f0a500;
+    }
+    display: flex;
+    justify-content: flex-end;
+    background-color: #f4f4f4;
+    border-radius: 0.5rem;
+  }
+  .header-logo a.icon {
+    background-image: url("https://mdbootstrap.com/img/svg/hamburger2.svg?color=fff");
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    background-size: 50px;
+    margin-top: 20px;
+  }
 }

@@ -1,9 +1,9 @@
 <div class="header">
   <div class="header-logo">
-    <a class="icon"> </a>
+    <a class="icon" (click)="onChangeDisplay()"> </a>
     <a routerLink="/start">MY First TODO</a>
   </div>
-  <div class="nav">
+  <div class="nav" [ngClass]="{ navActivate: activate === true }">
     <a
       class="highlight"
       routerLink="/tobuy"

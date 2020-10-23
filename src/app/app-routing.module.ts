@@ -16,8 +16,8 @@ const appRoutes: Routes = [
   { path: "to-call", component: ToCallComponent },
   { path: "costs", component: CostsComponent },
   { path: "sport", component: SportComponent },
-  { path: "setting", redirectTo: "/start" },
-  { path: "exit", redirectTo: "/start" },
+  // { path: "setting", redirectTo: "/to-do" },
+  // { path: "exit", redirectTo: "/exit" },
   { path: "**", redirectTo: "/start" },
 ];
 @NgModule({
