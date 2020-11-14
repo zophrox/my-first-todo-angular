@@ -2,9 +2,15 @@
   <div class="text">
     <p [ngClass]="{ through: lineThrough }">
       <input type="checkbox" id="qwe" (change)="checkValue($event)" />
-      {{ taskData.text }}
+      <span *ngIf="!edit">{{ taskData.text }} </span>
+      <input
+        *ngIf="edit"
+        type="text"
+        size="{{ sizeInput }}"
+        value="{{ taskData.text }}"
+      />
+
       <span *ngIf="!lineThrough">до - {{ taskData.time }}</span>
- 
     </p>
   </div>
 
@@ -15,7 +21,7 @@
     </p>
   </div>
   <div class="edit">
-    <button>Редагувати</button>
+    <button (click)="editTask()">Редагувати</button>
     <button (click)="removeTask()">Видалити</button>
   </div>
 </div>

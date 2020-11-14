@@ -31,5 +31,8 @@ export class AddTaskComponent implements OnInit {
     if (this.route.snapshot.fragment === "do") {
       this.dataService.addNewTaskToDo(this.dataTask);
     }
+    if (this.route.snapshot.fragment === "call") {
+      this.dataService.addNewTaskCall(this.dataTask);
+    }
   }
 }

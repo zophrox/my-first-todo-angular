@@ -33,11 +33,36 @@ export class DataService {
       readyTime: undefined,
     },
   ];
+  toCallData: DataTask[] = [
+    {
+      text: "Стоматолог",
+      time: "09:30",
+      readyTime: undefined,
+    },
+    {
+      text: "Сантехнік",
+      time: "14:30",
+      readyTime: undefined,
+    },
+    {
+      text: "Електрик",
+      time: "14:25",
+      readyTime: undefined,
+    },
+    {
+      text: "Няня",
+      time: "12:00",
+      readyTime: undefined,
+    },
+  ];
   getDataBuy() {
     return this.toBuyData.slice();
   }
   getDataToDo() {
     return this.toDoData.slice();
+  }
+  getDataCall() {
+    return this.toCallData.slice();
   }
   addNewTaskBuy(dataTask: DataTask) {
     this.toBuyData.push(dataTask);
@@ -47,6 +72,10 @@ export class DataService {
     this.toDoData.push(dataTask);
     this.toDataChanges.next(this.toDoData.slice());
   }
+  addNewTaskCall(dataTask: DataTask) {
+    this.toCallData.push(dataTask);
+    this.toDataChanges.next(this.toCallData.slice());
+  }
   deleteTaskBuy(id: number) {
     this.toBuyData.splice(id, 1);
     this.toDataChanges.next(this.toBuyData.slice());
@@ -54,5 +83,9 @@ export class DataService {
   deleteTaskToDo(id: number) {
     this.toDoData.splice(id, 1);
     this.toDataChanges.next(this.toDoData.slice());
+  }
+  deleteTaskCall(id: number) {
+    this.toCallData.splice(id, 1);
+    this.toDataChanges.next(this.toCallData.slice());
   }
 }

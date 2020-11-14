@@ -14,6 +14,8 @@ export class TaskItemComponent implements OnInit {
   @Input() id: number;
 
   lineThrough: boolean;
+  edit: boolean = false;
+  sizeInput: number;
 
   constructor(
     private dataService: DataService,
@@ -26,6 +28,10 @@ export class TaskItemComponent implements OnInit {
   }
 
   ngOnInit() {}
+  editTask() {
+    this.edit = !this.edit;
+    this.sizeInput = this.taskData.text.length;
+  }
   removeTask() {
     if (this.route.snapshot.fragment === "do") {
       this.dataService.deleteTaskToDo(this.id);
@@ -33,6 +39,8 @@ export class TaskItemComponent implements OnInit {
     if (this.route.snapshot.fragment === "buy") {
       this.dataService.deleteTaskBuy(this.id);
     }
-   
+    if (this.route.snapshot.fragment === "call") {
+      this.dataService.deleteTaskCall(this.id);
+    }
   }
 }

@@ -1,16 +1,15 @@
 .header {
   width: 100%;
   padding: 10px;
-  background: #f0a500;
+  background: #686d76;
   border-radius: 0.5rem;
-  color: #f4f4f4;
+  color: #eeeeee;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  display: block;
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }
 a {
-  color: #f4f4f4;
+  // color: #eeeeee;
   text-decoration: none;
   padding: 10px 15px;
   font-size: 20px;
@@ -18,45 +17,50 @@ a {
 }
 
 .header-logo {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
 
   a {
     font-size: 40px;
+    color: #eeeeee;
   }
 
-  background-color: #f0a500;
+  background-color: #686d76;
   border-radius: 0.5rem;
   align-items: center;
 }
 .nav {
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  background-color: #f4f4f4;
+  background-color: #eeeeee;
   border-radius: 0.5rem;
-  .highlight {
-    color: #f0a500;
+  a {
+    color: #686d76;
   }
 }
 
 .setting {
+  width: 100%;
   a {
-    color: white;
+    color: #eeeeee;
   }
   display: flex;
   justify-content: flex-end;
-  background-color: #f0a500;
+  background-color: #686d76;
   border-radius: 0.5rem;
 }
-.highlight:hover {
-  color: #f4f4f4;
-  background-color: #1a1c20;
+.nav a.highlight:hover {
+  transition: 2s;
+  color: #eeeeee;
+  background-color: #373a40;
   border-radius: 6px;
   box-sizing: padding-box;
 }
 
 .active {
-  background-color: #1a1c20;
+  background-color: #373a40;
 
   padding: 10px 15px;
   margin-left: 5px;
@@ -65,21 +69,26 @@ a {
 
 @media screen and(max-width:642px) {
   .nav {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    transition: 0.55s;
   }
   .navActivate {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    visibility: visible;
+    opacity: 1;
   }
 
   .setting {
     a {
-      color: #f0a500;
+      color: #686d76;
     }
     display: flex;
     justify-content: flex-end;
-    background-color: #f4f4f4;
+    background-color: #eeeeee;
     border-radius: 0.5rem;
   }
   .header-logo a.icon {
