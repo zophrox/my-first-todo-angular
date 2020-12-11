@@ -1,27 +1,60 @@
 <div class="task-input">
-  <div class="text">
-    <p [ngClass]="{ through: lineThrough }">
-      <input type="checkbox" id="qwe" (change)="checkValue($event)" />
-      <span *ngIf="!edit">{{ taskData.text }} </span>
-      <input
-        *ngIf="edit"
-        type="text"
-        size="{{ sizeInput }}"
-        value="{{ taskData.text }}"
-      />
-
-      <span *ngIf="!lineThrough">до - {{ taskData.time }}</span>
-    </p>
+  <div class="text" [ngClass]="{ through: lineThrough }">
+    <input type="checkbox" id="qwe" (change)="checkValue($event)" />
+    <div>{{ taskData.text }}</div>
+    <div *ngIf="!lineThrough">
+      <p>&ensp;до - {{ taskData.time }}</p>
+    </div>
   </div>
 
-  <div class="time">
-    <!-- <p *ngIf="!lineThrough">Виконати до: {{ taskData.time }}</p> -->
-    <p class="time-ready" *ngIf="lineThrough">
-      Виконано в: {{ taskData.readyTime | date: "hh:mm:ss" }}
-    </p>
+  <div class="time" *ngIf="lineThrough">
+    <p>Виконано в: {{ taskData.readyTime | date: "hh:mm:ss" }}</p>
   </div>
   <div class="edit">
-    <button (click)="editTask()">Редагувати</button>
-    <button (click)="removeTask()">Видалити</button>
+    <button color="accent" mat-raised-button (click)="editTask()">
+      <mat-icon>create</mat-icon>
+    </button>
+    <button color="warn" mat-raised-button (click)="removeTask()">
+      <mat-icon>delete_foreve</mat-icon>
+    </button>
   </div>
 </div>
+<div id="openModal" *ngIf="edit" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Редактор</h3>
+        <button mat-icon-button (click)="editTask()" color="accent">
+          <mat-icon color="warn">cancel</mat-icon>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          <input
+            type="text"
+            size="{{ sizeInput }}"
+            placeholder="{{ taskData.text }}"
+            [(ngModel)]="editText"
+          />
+          до:
+          <input type="time" [(ngModel)]="time" />
+        </p>
+
+        <button mat-icon-button (click)="editTextTask(editText,time)" color="accent">
+          <mat-icon>check_circle</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <span *ngIf="edit" class="editInput">
+    <input type="text" size="{{ sizeInput }}" value="{{ taskData.text }}" />
+    <div class="editButton">
+      <button  mat-icon-button (click)="editTask()" color="accent">
+        <mat-icon>check_circle</mat-icon>
+      </button>
+      <button mat-icon-button (click)="editTask()">
+        <mat-icon color="warn">cancel</mat-icon>
+      </button>
+    </div></span
+  > -->

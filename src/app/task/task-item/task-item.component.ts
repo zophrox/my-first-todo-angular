@@ -16,6 +16,8 @@ export class TaskItemComponent implements OnInit {
   lineThrough: boolean;
   edit: boolean = false;
   sizeInput: number;
+  editText: string;
+  time: string;
 
   constructor(
     private dataService: DataService,
@@ -31,6 +33,18 @@ export class TaskItemComponent implements OnInit {
   editTask() {
     this.edit = !this.edit;
     this.sizeInput = this.taskData.text.length;
+  }
+  editTextTask(text: string, time: string) {
+    this.edit = !this.edit;
+    if (this.route.snapshot.fragment === "buy") {
+      this.dataService.editTaskBuy(text, time, this.id);
+    }
+    if (this.route.snapshot.fragment === "do") {
+      this.dataService.editTaskToDo(text, time, this.id);
+    }
+    if (this.route.snapshot.fragment === "call") {
+      this.dataService.editTaskCall(text, time, this.id);
+    }
   }
   removeTask() {
     if (this.route.snapshot.fragment === "do") {

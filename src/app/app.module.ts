@@ -11,10 +11,12 @@ import { CostsComponent } from "./task/costs/costs.component";
 import { TaskItemComponent } from "./task/task-item/task-item.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { SportComponent } from "./sport/sport.component";
-import { StartComponent } from './start/start.component';
+import { StartComponent } from "./start/start.component";
 
-import { DataService } from './shared/data.service';
-import { AddTaskComponent } from './add-task/add-task.component';
+import { DataService } from "./shared/data.service";
+import { AddTaskComponent } from "./add-task/add-task.component";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MaterialModule } from "./material/material.module";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,13 @@ import { AddTaskComponent } from './add-task/add-task.component';
     StartComponent,
     AddTaskComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+  ],
   providers: [DataService],
   bootstrap: [AppComponent],
 })

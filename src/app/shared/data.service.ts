@@ -27,8 +27,7 @@ export class DataService {
       readyTime: undefined,
     },
     {
-      text:
-        "закінчити працювати",
+      text: "закінчити працювати",
       time: "16:00",
       readyTime: undefined,
     },
@@ -86,6 +85,21 @@ export class DataService {
   }
   deleteTaskCall(id: number) {
     this.toCallData.splice(id, 1);
+    this.toDataChanges.next(this.toCallData.slice());
+  }
+  editTaskBuy(text: string, time: string, id: number) {
+    this.toBuyData[id].text = text;
+    this.toBuyData[id].time = time;
+    this.toDataChanges.next(this.toBuyData.slice());
+  }
+  editTaskToDo(text: string, time: string, id: number) {
+    this.toDoData[id].text = text;
+    this.toDoData[id].time = time;
+    this.toDataChanges.next(this.toDoData.slice());
+  }
+  editTaskCall(text: string, time: string, id: number) {
+    this.toCallData[id].text = text;
+    this.toCallData[id].time = time;
     this.toDataChanges.next(this.toCallData.slice());
   }
 }
